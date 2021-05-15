@@ -1,0 +1,79 @@
+<div class="form-content">
+    <form class="form">
+      <div class="form-head">
+        <mat-icon aria-hidden="false" class="form-head-icon">close</mat-icon>
+        <div class="form-head-text">Person Address Form</div>
+      </div>
+      <div >
+        <div class="flex-group"> 
+            <div class="element">
+                <mat-form-field  at-form-field  appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First Name" formControlName="firstName">
+                </mat-form-field>
+            </div>
+            <div class="element">
+                <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name" formControlName="lastName">
+                </mat-form-field>
+            </div>
+        </div>
+            
+        <div>
+            <div class="flex-group">
+                <div class="element">
+                  <mat-form-field appearance="outline" >
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput placeholder="Your Phone Number" formControlName="phone">
+                  </mat-form-field>
+                </div>
+                <div class="element">
+                  <mat-form-field appearance="outline" >
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Email id" formControlName="email">
+                  </mat-form-field>
+                </div>
+            </div>
+        </div>
+  
+        <div class="group">
+          <mat-form-field  appearance="outline"  class="element">
+            <mat-label>Address</mat-label>
+            <textarea matInput rows="3"></textarea>
+          </mat-form-field>
+        </div>
+  
+        <div>
+            <div class="group">
+                <div class="element">
+                  <mat-form-field appearance="outline">
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="City" formControlName="city">
+                  </mat-form-field>
+                </div>
+                <div class="element">
+                  <mat-form-field appearance="outline">
+                    <mat-label>State</mat-label>
+                    <input matInput placeholder="State" formControlName="state">
+                  </mat-form-field>
+                </div>
+                <div class="element">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Zip Code</mat-label>
+                    <input matInput placeholder="Zip Code" formControlName="zip">
+                  </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-group">
+            <div class="btn-container">
+                <button mat-raised-button class="btn" color="primary">Submit</button>
+                <button mat-raised-button class="btn" color="warn">Reset</button>
+            </div>
+        </div>
+      </div>
+  
+    </form>
+  </div>
