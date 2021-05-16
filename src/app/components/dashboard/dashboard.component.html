@@ -1,1 +1,64 @@
 <app-header></app-header>
+<div class="container">
+
+    <mat-card class="title-bar">
+    <h4 class="head"> Person Details</h4>
+    <button mat-raised-button color="primary" class="btn">Add-Contact</button>
+    </mat-card>
+    <table mat-table [dataSource]="contactList" class="mat-elevation-z8">
+    
+       
+        <ng-container matColumnDef="FirstName">
+          <th mat-header-cell *matHeaderCellDef> FirstName </th>
+          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="LastName">
+          <th mat-header-cell *matHeaderCellDef> LastName </th>
+          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="PhoneNo">
+          <th mat-header-cell *matHeaderCellDef> PhoneNo </th>
+          <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="E-mail">
+          <th mat-header-cell *matHeaderCellDef> E-mail </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="Address">
+            <th mat-header-cell *matHeaderCellDef> Address </th>
+            <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="City">
+            <th mat-header-cell *matHeaderCellDef> City </th>
+            <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="State">
+            <th mat-header-cell *matHeaderCellDef> State </th>
+            <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Zip">
+            <th mat-header-cell *matHeaderCellDef> Zip </th>
+            <td mat-cell *matCellDef="let element"> {{element.zipCode}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let element"> <mat-icon aria-hidden="false" aria-label="Example delete icon" class="icon">delete</mat-icon>
+                 <mat-icon aria-hidden="false" aria-label="Example delete icon" class="icon">edit</mat-icon> </td>
+        </ng-container>
+    
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      
+</div>

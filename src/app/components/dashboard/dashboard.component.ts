@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AddressbookServiceService } from 'src/app/service/addressbook-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  displayedColumns: string[] = ['FirstName', 'LastName', 'PhoneNo', 'E-mail', 'Address', 'City', 'State', 'Zip', 'Action'];
+  contactList: any[]= [];
 
-  constructor() { }
+  constructor(private addressbookservice : AddressbookServiceService, private router : Router,
+    private route : ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => {
+      return false;
+    };
+    this.getAddressbookData();
+  }
+  getAddressbookData(){
+    this.addressbookservice.getContacts().subscribe((response:any) => {
+      this.contactList = response.data;
+      console.log(response);
+    })
+
   }
 
 }

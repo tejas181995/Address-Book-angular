@@ -11,4 +11,7 @@ export class AddressbookServiceService {
   addContact(data: any){
     return this.httpservice.Post('',data);
   }
+  getContacts(){
+    return this.httpservice.Get();
+  }
 }
