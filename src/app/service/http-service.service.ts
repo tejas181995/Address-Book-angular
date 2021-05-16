@@ -23,4 +23,7 @@ export class HttpServiceService {
   Get():Observable<any>{
     return this.httpservice.get<any>(this.baseUrl+"/all", this.options);
   }
+  Delete(id: any){
+    return this.httpservice.delete(this.baseUrl+"/delete/"+id);
+  }
 }

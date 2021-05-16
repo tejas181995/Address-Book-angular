@@ -27,5 +27,17 @@ export class DashboardComponent implements OnInit {
     })
 
   }
+  deleteContact(id: any){
+    this.addressbookservice.deleteContact(id).subscribe((response)=>{
+      console.log(response);
+      this.getAddressbookData();
+    },(error) => {
+
+    console.log(error);
+    })
+  }
+    
+
 
 }
+

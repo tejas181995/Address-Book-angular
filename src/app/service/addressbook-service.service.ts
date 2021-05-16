@@ -14,4 +14,7 @@ export class AddressbookServiceService {
   getContacts(){
     return this.httpservice.Get();
   }
+  deleteContact(id: any){
+    return this.httpservice.Delete(id);
+  }
 }
