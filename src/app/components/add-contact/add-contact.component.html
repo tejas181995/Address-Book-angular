@@ -2,7 +2,7 @@
 <div class="form-content">
   <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-head">
-      <mat-icon aria-hidden="false" class="form-head-icon">close</mat-icon>
+      <mat-icon aria-hidden="false" class="form-head-icon" (click)="onClose()">close</mat-icon>
       <div class="form-head-text">Person Address Form</div>
     </div>
     <div>
@@ -71,7 +71,7 @@
       <div class="flex-group">
         <div class="btn-container">
           <button mat-raised-button class="btn" color="primary">Submit</button>
-          <button mat-raised-button class="btn" color="warn">Reset</button>
+          <button mat-raised-button class="btn" color="warn" (click)="onReset()">Reset</button>
         </div>
       </div>
     </div>

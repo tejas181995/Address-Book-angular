@@ -50,4 +50,10 @@ export class AddContactComponent implements OnInit {
       });
     }
   }
+  onReset(){
+    location.reload();
+  }
+  onClose(){
+    this.router.navigateByUrl('/dashboard');
+  }
 }

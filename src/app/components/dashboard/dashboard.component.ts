@@ -48,6 +48,9 @@ export class DashboardComponent implements OnInit {
       this.getAddressbookData();
     });
   } 
+  onClick(){
+    this.router.navigateByUrl('/addcontact');
+  }
 
 
 }

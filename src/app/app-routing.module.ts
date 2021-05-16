@@ -6,7 +6,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 const routes: Routes = [
   {
     path:"",
-    redirectTo:"addcontact",
+    redirectTo:"dashboard",
     pathMatch:"full"
   },
   {
