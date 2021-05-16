@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AddressbookServiceService } from 'src/app/service/addressbook-service.service';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateComponent } from '../update/update.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +14,7 @@ export class DashboardComponent implements OnInit {
   contactList: any[]= [];
 
   constructor(private addressbookservice : AddressbookServiceService, private router : Router,
-    private route : ActivatedRoute) { }
+    private route : ActivatedRoute, private dialog : MatDialog) { }
 
   ngOnInit(): void {
     this.router.routeReuseStrategy.shouldReuseRoute = () => {
@@ -36,7 +38,16 @@ export class DashboardComponent implements OnInit {
     console.log(error);
     })
   }
-    
+  updateContact(contact: any){
+    const dialogBox = this.dialog.open(UpdateComponent,{
+      width: '54%',
+      data: {contact}
+    })
+    dialogBox.afterClosed().subscribe(result => {
+      console.log('dialog closed');
+      this.getAddressbookData();
+    });
+  } 
 
 
 }

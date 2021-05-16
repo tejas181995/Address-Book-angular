@@ -26,4 +26,7 @@ export class HttpServiceService {
   Delete(id: any){
     return this.httpservice.delete(this.baseUrl+"/delete/"+id);
   }
+  Update(id: any, data: any){
+    return this.httpservice.put(this.baseUrl+"/update/"+id, data, this.options);
+  }
 }

@@ -17,4 +17,7 @@ export class AddressbookServiceService {
   deleteContact(id: any){
     return this.httpservice.Delete(id);
   }
+  updateContact(id:any, data: any){
+    return this.httpservice.Update(id, data);
+  }
 }
