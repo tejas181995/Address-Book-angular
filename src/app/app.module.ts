@@ -18,6 +18,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import { UpdateComponent } from './components/update/update.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
+import { MatTableDataSource } from '@angular/material/table';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +46,10 @@ import {MatDialogModule} from '@angular/material/dialog';
    // HttpClient
     MatTableModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule,
+    MatSelectModule,
+   // MatTableDataSource
 
   ],
   providers: [],

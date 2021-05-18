@@ -1,4 +1,6 @@
 import { Inject } from '@angular/core';
+import { BigJson } from "../../../assets/big.json"
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef , MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -18,8 +20,11 @@ export class UpdateComponent implements OnInit {
   email: String;
   address: String;
   city: String;
-  state: String;
+  state: any;
   zipCode: String;
+  cities: any=[]
+  stateCity: any = BigJson.stateCity;
+  states = Object.keys(this.stateCity); 
 
   constructor(public dialogref : MatDialogRef<UpdateComponent>, @Inject(MAT_DIALOG_DATA) public data : any,
   private addressbookservice : AddressbookServiceService, private formBuilder : FormBuilder,
@@ -34,6 +39,7 @@ export class UpdateComponent implements OnInit {
       state: ['', [Validators.required]],
       zipCode: ['', [Validators.required]]
     });
+    console.log(data);
     this.firstName = data.contact.firstName;
     this.lastName = data.contact.lastName;
     this.phone = data.contact.phone;
@@ -42,10 +48,14 @@ export class UpdateComponent implements OnInit {
     this.city = data.contact.city;
     this.state = data.contact.state;
     this.zipCode = data.contact.zipCode;
-
-   }
+  }
 
   ngOnInit(): void {
+    console.log(this.city)
+    this.cities = this.stateCity[this.state]
+  }
+  show(){
+    this.cities = this.stateCity[this.form.value.state]
   }
   onSubmit(){
     if(this.form.valid){
@@ -65,6 +75,9 @@ export class UpdateComponent implements OnInit {
         this.dialogref.close();
       })
     }
+  }
+  onClose(){
+    this.dialogref.close();
   }
 
 }
